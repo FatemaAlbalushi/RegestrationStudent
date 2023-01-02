@@ -145,6 +145,10 @@ public class Student_Regestration {
 					
 					String Id = new Scanner(System.in).nextLine();
 					
+					for (String key : map.keySet()) {
+//						
+							System.out.println(Arrays.toString(map.get(key)));
+					}
 					for ( java.util.Map.Entry<String, String[]> entry : map.entrySet()) {
 						if (entry.getKey() == Id) {
 							System.out.println("true");
@@ -161,12 +165,7 @@ public class Student_Regestration {
 //								}
 //
 //							}
-					
-
-//						br.close();
-//					} catch (IOException e) {
-//						e.printStackTrace();
-//					}
+		
 						}
 					}
 
