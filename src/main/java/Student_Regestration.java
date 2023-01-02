@@ -6,6 +6,7 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.lang.ProcessHandle.Info;
+import java.security.KeyStore.Entry;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Scanner;
@@ -27,8 +28,6 @@ public class Student_Regestration {
 		// TODO Auto-generated method stub
 
 		Scanner input = new Scanner(System.in);
-		String student[] = new String[3];
-		String studentE[] = new String[3];
 		BufferedWriter bw = null;
 
 		System.out.println("Wellcome to School Management System ");
@@ -46,7 +45,7 @@ public class Student_Regestration {
 		
 			if (actionNum == 1) {
 				
-				while (actionNum != 5) {
+				//while (actionNum != 5) {
 
 					System.out.println();
 				System.out.println("1. Register Student");
@@ -87,13 +86,13 @@ public class Student_Regestration {
 
 					System.out.println("Enter Student Name: ");
 					System.out.println("-------------------");
-					String StudentName = new Scanner(System.in).nextLine();
+					String StudentName = input.nextLine();
 
 					// student[i]= StudentName;
 
 					System.out.println("Enter Student Email: ");
 					System.out.println("-------------------");
-					String StudentEmail = new Scanner(System.in).nextLine();
+					String StudentEmail = input.nextLine();
 					// studentE[i]= StudentEmail;
 
 					try {
@@ -140,35 +139,43 @@ public class Student_Regestration {
 
 				// Search for stufent with id
 				else if (menuNum == 3) {
+					
 					System.out.println("3. Search Student");
 					System.out.println("Enter Student ID: ");
+					
 					String Id = new Scanner(System.in).nextLine();
+					
+					for ( java.util.Map.Entry<String, String[]> entry : map.entrySet()) {
+						if (entry.getKey() == Id) {
+							System.out.println("true");
+							//System.out.println(entry.getKey() + " => " + Arrays.toString(entry.getValue()));
 //					String mystring;
 //					try {
 //						BufferedReader br = new BufferedReader(new FileReader("data/Reg.csv"));
 //						while ((mystring = br.readLine()) != null) {
 							// System.out.println("there is a student");
-							for (String key : map.keySet()) {
-								if (map.containsKey(Id)) {
-									System.out.println("true");
-									System.out.println(Arrays.toString(map.get(key)));
-								}
-
-							}
-
-						//}
+//							for (String key : map.keySet()) {
+//								if (map.containsKey(Id)) {
+//									System.out.println("true");
+//									System.out.println(Arrays.toString(map.get(key)));
+//								}
+//
+//							}
+					
 
 //						br.close();
 //					} catch (IOException e) {
 //						e.printStackTrace();
 //					}
+						}
+					}
 
 				}
 
 				else {
 					System.out.println("4. Update Student");
 				}
-			}
+			//}
 			}
 
 			else {
@@ -177,6 +184,9 @@ public class Student_Regestration {
 			
 
 		}
+	
+	
+	
 	}
 	
 
