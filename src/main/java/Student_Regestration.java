@@ -45,7 +45,7 @@ public class Student_Regestration {
 		
 			if (actionNum == 1) {
 				
-				//while (actionNum != 5) {
+				while (actionNum != 5) {
 
 					System.out.println();
 				System.out.println("1. Register Student");
@@ -86,13 +86,13 @@ public class Student_Regestration {
 
 					System.out.println("Enter Student Name: ");
 					System.out.println("-------------------");
-					String StudentName = input.nextLine();
+					String StudentName = new Scanner(System.in).nextLine();
 
 					// student[i]= StudentName;
 
 					System.out.println("Enter Student Email: ");
 					System.out.println("-------------------");
-					String StudentEmail = input.nextLine();
+					String StudentEmail = new Scanner(System.in).nextLine();
 					// studentE[i]= StudentEmail;
 
 					try {
@@ -146,26 +146,13 @@ public class Student_Regestration {
 					String Id = new Scanner(System.in).nextLine();
 					
 					for (String key : map.keySet()) {
-//						
+						
 							System.out.println(Arrays.toString(map.get(key)));
 					}
 					for ( java.util.Map.Entry<String, String[]> entry : map.entrySet()) {
 						if (entry.getKey() == Id) {
 							System.out.println("true");
-							//System.out.println(entry.getKey() + " => " + Arrays.toString(entry.getValue()));
-//					String mystring;
-//					try {
-//						BufferedReader br = new BufferedReader(new FileReader("data/Reg.csv"));
-//						while ((mystring = br.readLine()) != null) {
-							// System.out.println("there is a student");
-//							for (String key : map.keySet()) {
-//								if (map.containsKey(Id)) {
-//									System.out.println("true");
-//									System.out.println(Arrays.toString(map.get(key)));
-//								}
-//
-//							}
-		
+							System.out.println(entry.getKey() + " => " + Arrays.toString(entry.getValue()));
 						}
 					}
 
@@ -174,7 +161,7 @@ public class Student_Regestration {
 				else {
 					System.out.println("4. Update Student");
 				}
-			//}
+			 }
 			}
 
 			else {
