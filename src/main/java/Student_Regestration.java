@@ -60,7 +60,7 @@ public class Student_Regestration {
 				System.out.println("-------------------");
 				int menuNum = input.nextInt();
 
-				HashMap<String, String[]> map = new HashMap<String, String[]>();
+				HashMap<String, String[]> Studentinfo = new HashMap<String, String[]>();
 				if (menuNum == 1) {
 
 					int newID = 1;
@@ -72,7 +72,7 @@ public class Student_Regestration {
 
 							String[] box = line.split(",");
 
-							map.put(box[0], box);
+							Studentinfo.put(box[0], box);
 
 							newID++;
 						}
@@ -88,12 +88,12 @@ public class Student_Regestration {
 					System.out.println("-------------------");
 					String StudentName = new Scanner(System.in).nextLine();
 
-					// student[i]= StudentName;
+					
 
 					System.out.println("Enter Student Email: ");
 					System.out.println("-------------------");
 					String StudentEmail = new Scanner(System.in).nextLine();
-					// studentE[i]= StudentEmail;
+					
 
 					try {
 						FileWriter newfile = new FileWriter("data/Reg.csv", true);
@@ -120,7 +120,6 @@ public class Student_Regestration {
 					System.out.println("2. View Student");
 
 					Scanner sc = null;
-					String[] person = null;
 
 					try {
 						sc = new Scanner(new File("data/Reg.csv"));
@@ -145,11 +144,11 @@ public class Student_Regestration {
 					
 					String Id = new Scanner(System.in).nextLine();
 					
-					for (String key : map.keySet()) {
+					for (String key : Studentinfo.keySet()) {
 						
-							System.out.println(Arrays.toString(map.get(key)));
+							System.out.println(Arrays.toString(Studentinfo.get(key)));
 					}
-					for ( java.util.Map.Entry<String, String[]> entry : map.entrySet()) {
+					for ( java.util.Map.Entry<String, String[]> entry : Studentinfo.entrySet()) {
 						if (entry.getKey() == Id) {
 							System.out.println("true");
 							System.out.println(entry.getKey() + " => " + Arrays.toString(entry.getValue()));
