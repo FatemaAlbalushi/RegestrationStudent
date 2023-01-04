@@ -16,13 +16,17 @@ import java.util.Scanner;
  */
 
 /**
- * @author LAP-10
+ * This program is School Management System for Administration to Register new Student , 
+ * See the existing student view and search for spicific student.
  *
  */
 public class Student_Regestration {
 
 	/**
 	 * @param args
+	 * the main will allow the admin to :
+	 * 1. Register new student using their name and email and  the id will automaticlly generated
+	 * 2. The admin able to view 
 	 */
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
@@ -136,7 +140,7 @@ public class Student_Regestration {
 					sc.close();
 				}
 
-				// Search for stufent with id
+				// Search for student with id
 				else if (menuNum == 3) {
 					
 					System.out.println("3. Search Student");
@@ -169,6 +173,7 @@ public class Student_Regestration {
 			
 
 		}
+	
 	
 	
 	
