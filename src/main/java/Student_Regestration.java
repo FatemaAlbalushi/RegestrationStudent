@@ -14,6 +14,7 @@ import java.security.KeyStore.Entry;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Scanner;
 
@@ -72,8 +73,8 @@ public class Student_Regestration {
 				System.out.println("1. Creat Student");
 				System.out.println("2. View Students");
 				System.out.println("3. Search for Student");
-				System.out.println("4. Update Student");
-				System.out.println("5. Deleat Student");
+				System.out.println("4. Update/ Deleat Student");
+				
 			
 
 				System.out.println("-------------------");
@@ -159,60 +160,12 @@ public class Student_Regestration {
 				
 				else if (menuNum == 4) {
 					
-					System.out.println("4. Update Student");
+					System.out.println("4. Update/ Deleat Student");
 					UpdateFile("data/Reg.csv","data/Reg1.csv");
-//					 System.out.print("Enter ID : ");
-//					 String Id = new Scanner(System.in).nextLine();
-//					 System.out.print("Enter name : ");
-//					 String StudentNewName = new Scanner(System.in).nextLine();
-//					 
-//					 
-//					 File originalFile = new File("data/Reg1.csv");
-//				     BufferedReader br = new BufferedReader(new FileReader(originalFile));
-//				     
-//				     File tempFile = new File("data/Reg2.csv");
-//				     PrintWriter pw = new PrintWriter(new FileWriter(tempFile));
-//				     
-//				     String line = null;
-//				        // Read from the original file and write to the new
-//				        // unless content matches data to be removed.
-//				        while ((line = br.readLine()) != null) {
-//
-//				            if (line.contains(Id)) {
-//				                String StudentName = line.substring(line.lastIndexOf(" "), line.length());
-//				                if (StudentName != null || !StudentName.trim().isEmpty()) {
-//				                    String replenishedName = Integer.parseInt(StudentName.trim()) + StudentNewName;
-//				                    System.out.println("StudentNewName : " + StudentNewName);
-//				                    line = line.substring(0,line.lastIndexOf(" ")) + replenishedName;
-//				                }
-//
-//				            }
-//				            pw.println(line);
-//				            pw.flush();
-//				        }
-//				            pw.close();
-//				            br.close();
-//
-//				            // Delete the original file
-//				            if (!originalFile.delete()) {
-//				                System.out.println("Could not delete file");
-//				                return;
-//				            }
-//
-//				            // Rename the new file to the filename the original file had.
-//				            if (!tempFile.renameTo(originalFile))
-//				                System.out.println("Could not rename file");
-				}
-				
-				else if (menuNum == 5) {
-					
-					System.out.println("5. Deleat Student");
-					File file = new File("data/Reg2.csv");
-					DeleatFile(file);
-					
-				}
 
+				}
 				
+			
 			 }
 			}
 
@@ -222,6 +175,13 @@ public class Student_Regestration {
 			
 
 		}
+	
+	/**
+	 * This method is for converting the file to hashmap.
+	 * @param filepath : the path of file to be converted.
+	 * @return : return the hashmap.
+	 * @throws IOException
+	 */
 	
 	public static HashMap<String, String[]> fileTohashMap( String filepath) throws IOException {
 		
@@ -247,6 +207,10 @@ public class Student_Regestration {
 		return Studentinfo1;
 		
 	}
+	/**
+	 * method to view the student using scanner
+	 * @param filepath  : the path of file to be viewed.
+	 */
 	
 	 public static void ViewStudent (String filepath) {
 		 Scanner sc = null;
@@ -267,6 +231,13 @@ public class Student_Regestration {
 		
 	}
 	 
+	 
+	 /**
+	  * 
+	  * @param Id: the student id.
+	  * @param filePath:: the path of file to search in it.
+	  * @throws IOException
+	  */
 	 public static void SearchStudent(String Id , String filePath) throws IOException {
 		
 			
@@ -280,22 +251,18 @@ public class Student_Regestration {
 					
 				}
 				
-				
 			}
 			
 		
 	}
 	 
-	 public static void DeleatFile(File Filename) {
-		 
-		 if (Filename.delete()) {
-	            System.out.println("File deleted successfully");
-	        }
-	        else {
-	            System.out.println("Failed to delete the file");
-	        }
-	}
-	 
+
+	 /**
+	  * 
+	  * @param filepath : the file to be updated.
+	  * @param newfilepath : the new file "After the updation of the orginal file"
+	  * @throws IOException
+	  */
 	 public static void UpdateFile(String filepath, String newfilepath ) throws IOException {
 		 
 		
@@ -337,21 +304,13 @@ public class Student_Regestration {
 			 catch (Exception e) {
 				// TODO: handle exception
 			}
-			 
-			 
-			 
-			 
+			 	 
 		 }
-		 
-		 
-		 
+	 
 		
 	}
 	 
-	 
-	 
-	 
-	 
+
     }
 
 	
